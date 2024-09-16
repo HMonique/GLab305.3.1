@@ -33,6 +33,15 @@ public class AccessBook {
         boolean result = bookDao.updateBook(Bookupdating, 3);
         System.out.println(result);
 
+        boolean a= bookDao.deleteBook(4);
+        if(a == true) {
+            System.out.println("Record is deleted");
+        }
+        else
+        {
+            System.out.println("Recored is deleted");
+        }
+
 
         ArrayList<Books> BookList = new ArrayList<Books>();
 
