@@ -12,7 +12,19 @@ public class AccessBook {
     public static void main(String[] args) {
 
         BookDao bookDao = new BookDaoImpl();
-        System.out.println("--------- inserting book records ---------");
+//        System.out.println("--------- inserting book records ---------");
+        System.out.println(" ===== Display list of all books ====");
+        try {
+            for (Books cc : bookDao.getAllBooks()) {
+                int ISBN = cc.getIsbn();
+                String BookName = cc.getBookName();
+                System.out.println("======================");
+                System.out.println("ISBN Number :" + ISBN + "and Book name: " + BookName);
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+        }
 
         ArrayList<Books> BookList = new ArrayList<Books>();
 
